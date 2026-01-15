@@ -1,0 +1,11 @@
+https://devopedia.org/linux-signals
+
++ Compile the code
+gcc handler.c
+
++ run the executable 
+./a.out 
+
++ Then type:
+^c (control c = SIGINT)
+

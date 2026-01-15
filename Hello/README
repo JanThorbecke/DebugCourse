@@ -1,0 +1,12 @@
+
+https://medium.com/havingfun/debugging-c-code-with-gdb-90adb2f3da96
+
+#compile the code
+gcc hello.c -o hello -g
+
+#attach the debugger
+gdb hello
+
+# run the debugger
+(gdb) run
+

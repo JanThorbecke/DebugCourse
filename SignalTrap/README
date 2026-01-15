@@ -1,0 +1,16 @@
++ Compile code
+gcc stack_traces.c
+
++ run code
+./a.out
+
++ On Linux 
+gdb ./a.out
++On Apple OSX :
+lldb a.out
+
++ compile code enabling debug information inserted in the code
+gcc -g stack_traces.c
+
++ run code again in the debugger
+
