@@ -64,5 +64,7 @@ slurm-*.out
 #postscript files
 *.eps
 
+#perf data
+perf.data*
 #binaries
 
