@@ -1,16 +1,53 @@
+-1- catching signals
 + Compile code
 gcc stack_traces.c
 
 + run code
 ./a.out
 
-+ On Linux 
-gdb ./a.out
-+On Apple OSX :
-lldb a.out
++ Uncomment a different problem in cause_calamity() recompile and run again.
++ Inspect the code and see how the signals are catched and handled. 
 
-+ compile code enabling debug information inserted in the code
+
+-2- Attaching debugger and look at stack
+
+rm -rf a.out*
+gcc stack_traces.c
+
++ On Linux 
+objdump -h a.out 
+gdb ./a.out
+(gdb) run
+(gdb) where
+(gdb) quit
+
++On Apple OSX :
+gcc stack_traces.c
+objdump -h a.out 
+(can also try other options "-hl" of objdump)
+lldb a.out
+(lldb) run
+(lldb) bt
+(lldb) quit
+
+
++ recompile code enabling debug information inserted in the code
+rm -rf a.out*
 gcc -g stack_traces.c
 
-+ run code again in the debugger
+and attach debugger and run the same commands in the debugger
+
+To inspect the headers in the object file
++ On Linux 
+objdump -h a.out 
+
++ On Apple OSX :
+objdump -h  a.out.dSYM/Contents/Resources/DWARF/a.out
+
+
+
+-3- Flame Graph
+
+perf record -g ./a.out 
+perf report -n --stdio
 

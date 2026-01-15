@@ -1,4 +1,20 @@
 https://calabro.io/dwarf/elf
 
++ on Linux
+gcc cloop.c
+readelf --headers a.out 
+readelf --debug-dump=info a.out 
 
+#compile with debug info added
+gcc -g cloop.c 
+readelf --debug-dump=info a.out 
+
+
++ on MacOS
+clang cloop.c          
+dwarfdump -a a.out
+
+#compile with debug info added
+clang -g cloop.c 
+dwarfdump -a a.out.dSYM
 

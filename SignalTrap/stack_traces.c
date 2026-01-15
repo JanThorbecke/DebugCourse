@@ -253,8 +253,8 @@ void cause_calamity()
   /* uncomment one of the following error conditions to cause a calamity of 
    your choosing! */
   
-  (void)divide_by_zero();
-  // cause_segfault();
+  //(void)divide_by_zero();
+  cause_segfault();
   // assert(false);
   // infinite_loop();
   // illegal_instruction();
