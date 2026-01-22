@@ -48,6 +48,15 @@ objdump -h  a.out.dSYM/Contents/Resources/DWARF/a.out
 
 -3- Flame Graph
 
-perf record -g ./a.out 
+cd ../
+git clone https://github.com/brendangregg/FlameGraph 
+cd SignalTrap
+gcc -g stack_traces.c 
+perf record  -g -- ./a.out 
+perf script | ../FlameGraph/stackcollapse-perf.pl > out.perf-folded
+../FlameGraph/flamegraph.pl out.perf-folded > perf.svg
+firefox perf.svg 
+
+#CLI version
 perf report -n --stdio
 
